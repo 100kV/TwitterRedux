@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>13BE509D-CAFF-4EA8-8212-2090DDC827C7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Twitter</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>33362D3CCE3F3B90A7205185AAA0A25006BC655A</key>
+		<string>github.com:100kV/Twitter.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Twitter.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>33362D3CCE3F3B90A7205185AAA0A25006BC655A</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:100kV/Twitter.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>33362D3CCE3F3B90A7205185AAA0A25006BC655A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>33362D3CCE3F3B90A7205185AAA0A25006BC655A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Twitter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
