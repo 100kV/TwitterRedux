@@ -17,8 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Twitter_logo_blue_48.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y6O-BU-1sA">
+                                <rect key="frame" x="136" y="213" width="48" height="48"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa5-yg-Xps">
-                                <rect key="frame" x="100" y="269" width="121" height="30"/>
+                                <rect key="frame" x="99" y="269" width="122" height="30"/>
                                 <state key="normal" title="Login with Twitter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,9 +29,6 @@
                                     <action selector="onLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZHX-Kd-WbY"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Twitter_logo_blue_48.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y6O-BU-1sA">
-                                <rect key="frame" x="136" y="213" width="48" height="48"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -536,6 +536,9 @@
                                                             <state key="normal" image="reply.png">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <segue destination="Zrb-p7-bYu" kind="modal" identifier="ProfileReply" id="wJ6-aP-QvG"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dw-3i-8Bb">
                                                             <rect key="frame" x="80" y="0.0" width="19" height="16"/>
@@ -547,6 +550,7 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
+                                                                <action selector="onClickRetweetButton:" destination="0Wy-eU-SF9" eventType="touchUpInside" id="3Z0-Bm-BcQ"/>
                                                                 <action selector="onClickRetweetButton:" destination="bNd-79-ArW" eventType="touchUpInside" id="X7p-xU-A8u"/>
                                                             </connections>
                                                         </button>
@@ -560,6 +564,7 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
+                                                                <action selector="onClickFavoritedButton:" destination="0Wy-eU-SF9" eventType="touchUpInside" id="002-Ku-6kB"/>
                                                                 <action selector="onClickFavoritedButton:" destination="bNd-79-ArW" eventType="touchUpInside" id="Xpa-6s-FYy"/>
                                                             </connections>
                                                         </button>
@@ -640,6 +645,7 @@
                         <outlet property="nameLabel" destination="tQE-H2-6xh" id="osD-Qh-HxY"/>
                         <outlet property="profileImageView" destination="n4a-hK-Qhr" id="FdF-dP-mrk"/>
                         <outlet property="screennameLabel" destination="9e1-eW-RcA" id="cGb-Hv-fOM"/>
+                        <outlet property="tableView" destination="6QT-4o-STn" id="DZk-Fc-r7y"/>
                         <outlet property="tweetsCountLabel" destination="9fE-tr-lxg" id="ZS0-j1-HkQ"/>
                     </connections>
                 </viewController>
@@ -940,6 +946,6 @@
         <image name="retweet.png" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Fc-1b-fQy"/>
+        <segue reference="wJ6-aP-QvG"/>
     </inferredMetricsTieBreakers>
 </document>
