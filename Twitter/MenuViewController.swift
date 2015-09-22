@@ -19,7 +19,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     var hamburgerViewController: HamburgerViewController?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,7 +57,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
         hamburgerViewController?.contentViewController = viewControllers[indexPath.row]
     }
     

@@ -24,6 +24,18 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         return Static.instance
     }
     
+    func statusesUserTimeline(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ()) {
+        GET("1.1/statuses/user_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
+            
+            completion(tweets: tweets, error: nil)
+            
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                print("error getting home timeline")
+                completion(tweets: nil, error: error)
+        })
+    }
+    
     func favoritesDestroy(params: NSDictionary?, completion: (tweet: Tweet?, error: NSError?) -> ()) {
         POST("1.1/favorites/destroy.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             print("tweet unfavorited")
