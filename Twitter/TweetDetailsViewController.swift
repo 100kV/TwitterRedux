@@ -123,9 +123,7 @@ class TweetDetailsViewController: UIViewController {
         }
         
         if (segue.identifier == "DetailsProfile") {
-            let uiNavigationController = segue.destinationViewController as! UINavigationController
-            let profileViewController = uiNavigationController.topViewController as! ProfileViewController
-            
+            let profileViewController = segue.destinationViewController as! ProfileViewController
             profileViewController.user = tweet.user
         }
     }

@@ -150,7 +150,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g9-o4-V58">
                                                     <rect key="frame" x="8" y="9" width="48" height="47"/>
                                                     <connections>
-                                                        <segue destination="USg-N1-PZL" kind="modal" identifier="TimelineProfile" id="Lws-oo-K5n"/>
+                                                        <segue destination="0Wy-eU-SF9" kind="push" identifier="TimelineProfile" id="NN0-4v-cKj"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -448,13 +448,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yahoo!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQE-H2-6xh">
-                                <rect key="frame" x="64" y="80" width="45" height="16"/>
+                                <rect key="frame" x="64" y="80" width="248" height="16"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@yahoomail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e1-eW-RcA">
-                                <rect key="frame" x="64" y="96" width="69" height="15"/>
+                                <rect key="frame" x="64" y="96" width="248" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -834,7 +834,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMr-eO-vEP">
                                 <rect key="frame" x="8" y="97" width="48" height="47"/>
                                 <connections>
-                                    <segue destination="USg-N1-PZL" kind="modal" id="Mx9-Nf-dao"/>
+                                    <segue destination="0Wy-eU-SF9" kind="push" identifier="DetailsProfile" id="tOn-rV-mx8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -921,6 +921,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="USg-N1-PZL" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Sjk-Re-a0N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w6A-dJ-FIc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -960,7 +961,7 @@
         <image name="retweet.png" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lws-oo-K5n"/>
+        <segue reference="tOn-rV-mx8"/>
         <segue reference="wJ6-aP-QvG"/>
     </inferredMetricsTieBreakers>
 </document>

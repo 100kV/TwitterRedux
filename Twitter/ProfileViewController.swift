@@ -28,6 +28,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             user = User.currentUser
         }
         
+        self.navigationItem.title = user!.name
+        
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         tableView.estimatedRowHeight = 88.0
