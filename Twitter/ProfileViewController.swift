@@ -17,37 +17,43 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var followersCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var user: User? {
-        didSet {
-            let url = user!.profileImageUrl
-            if url != nil {
-                profileImageView.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: url!)!), placeholderImage: nil, success: { (NSURLRequest, NSHTTPURLResponse, UIImage) -> Void in
-                    self.profileImageView.image = UIImage
-                    }) { (NSURLRequest, NSHTTPURLResponse, NSError) -> Void in
-                        print("Error setting tweet user profile image")
-                }
-            }
-            
-            nameLabel.text = user!.name
-            screennameLabel.text = "@\(user!.screenname!)"
-            
-            tweetsCountLabel.text = "\(user!.tweetsCount!)"
-            followingCountLabel.text = "\(user!.followingCount!)"
-            followersCountLabel.text = "\(user!.followersCount!)"
-        }
-    }
+    var user: User?
     
     var tweets: [Tweet]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        user = User.currentUser
+        if (user == nil) {
+            user = User.currentUser
+        }
         
-//        var params = ["screen_name": user!.screenname!]
-//        TwitterClient.sharedInstance.statusesUserTimeline(params, completion: { (tweets, error) -> () in
-//            self.tweets = tweets
-//        })
+        self.tableView.dataSource = self;
+        self.tableView.delegate = self;
+        tableView.estimatedRowHeight = 88.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let url = user!.profileImageUrl
+        if url != nil {
+            profileImageView.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: url!)!), placeholderImage: nil, success: { (NSURLRequest, NSHTTPURLResponse, UIImage) -> Void in
+                self.profileImageView.image = UIImage
+                }) { (NSURLRequest, NSHTTPURLResponse, NSError) -> Void in
+                    print("Error setting tweet user profile image")
+            }
+        }
+        
+        nameLabel.text = user!.name
+        screennameLabel.text = "@\(user!.screenname!)"
+        
+        tweetsCountLabel.text = "\(user!.tweetsCount!)"
+        followingCountLabel.text = "\(user!.followingCount!)"
+        followersCountLabel.text = "\(user!.followersCount!)"
+        
+        var params = ["screen_name": user!.screenname!]
+        TwitterClient.sharedInstance.statusesUserTimeline(params, completion: { (tweets, error) -> () in
+            self.tweets = tweets
+            self.tableView.reloadData()
+        })
     }
 
     override func didReceiveMemoryWarning() {

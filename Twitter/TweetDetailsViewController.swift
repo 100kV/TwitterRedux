@@ -13,6 +13,7 @@ class TweetDetailsViewController: UIViewController {
     @IBOutlet weak var retweetUserScreenname: UILabel!
     
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screennameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
@@ -119,6 +120,13 @@ class TweetDetailsViewController: UIViewController {
             let uiNavigationController = segue.destinationViewController as! UINavigationController
             let newTweetViewController = uiNavigationController.topViewController as! NewTweetViewController
             newTweetViewController.replyTweet = tweet
+        }
+        
+        if (segue.identifier == "DetailsProfile") {
+            let uiNavigationController = segue.destinationViewController as! UINavigationController
+            let profileViewController = uiNavigationController.topViewController as! ProfileViewController
+            
+            profileViewController.user = tweet.user
         }
     }
 }

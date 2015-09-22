@@ -95,6 +95,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 //            cell.favoritedButton.setImage(UIImage(named: "favorite.png"), forState: UIControlState.Normal)
 //        }
         cell.favoritedButton.tag = indexPath.row
+        
+        cell.profileButton.tag = indexPath.row
+        
 //
 //        let formatter = NSDateFormatter()
 //        formatter.dateFormat = "h:mma"
@@ -169,6 +172,17 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let tweetDetailsViewController = segue.destinationViewController as! TweetDetailsViewController
             tweetDetailsViewController.tweet = tweet
         }
+        
+        if (segue.identifier == "TimelineProfile") {
+            let profileButton = sender as! UIButton
+            let tweet = tweets![profileButton.tag] as Tweet
+            
+            let uiNavigationController = segue.destinationViewController as! UINavigationController
+            let profileViewController = uiNavigationController.topViewController as! ProfileViewController
+            
+            profileViewController.user = tweet.user
+        }
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

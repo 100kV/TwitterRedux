@@ -31,7 +31,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
             completion(tweets: tweets, error: nil)
             
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                print("error getting home timeline")
+                print("error getting user timeline")
                 completion(tweets: nil, error: error)
         })
     }
@@ -102,7 +102,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
             completion(tweets: tweets, error: nil)
             
         }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-            print("error getting home timeline")
+            print("error getting home timeline: \(error)")
             completion(tweets: nil, error: error)
         })
     }
@@ -142,7 +142,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                     self.loginCompletion?(user: nil, error: error)
             })
         }) { (error: NSError!) -> Void in
-                print("Failed to receive access token")
+                print("Failed to receive access token: \(error)")
                 self.loginCompletion?(user: nil, error: error)
         }
     }
